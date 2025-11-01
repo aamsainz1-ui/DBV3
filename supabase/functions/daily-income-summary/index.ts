@@ -43,8 +43,8 @@ Deno.serve(async (req) => {
     console.log('วันที่ที่ต้องดึงข้อมูล:', dates);
     console.log('วันแรก:', dates[0], '| วันสุดท้าย:', dates[dates.length - 1]);
 
-    // ดึงข้อมูลธุรกรรมทั้งหมดในช่วง 7 วัน จาก transaction_history table (เพิ่ม limit เป็น 1000 เพื่อให้ครบถ้วน)
-    const query = `select=transaction_date,amount,source_type&transaction_date=gte.${dates[0]}&transaction_date=lte.${dates[dates.length - 1]}&source_type=eq.recent_transactions&order=transaction_date.asc&limit=1000`;
+    // ดึงข้อมูลธุรกรรมทั้งหมดในช่วง 7 วัน จาก transaction_history table (ไม่จำกัดจำนวน)
+    const query = `select=transaction_date,amount,source_type&transaction_date=gte.${dates[0]}&transaction_date=lte.${dates[dates.length - 1]}&source_type=eq.recent_transactions&order=transaction_date.asc`;
 
     const response = await fetch(`${supabaseUrl}/rest/v1/transaction_history?${query}`, {
       headers: {

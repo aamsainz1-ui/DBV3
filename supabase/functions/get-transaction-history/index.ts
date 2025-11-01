@@ -14,10 +14,10 @@ Deno.serve(async (req) => {
     try {
         // Parse query parameters for filtering
         const url = new URL(req.url);
+        const limit = url.searchParams.get('limit'); // ไม่กำหนด default เพื่อให้ดึงข้อมูลทั้งหมด
         const startDate = url.searchParams.get('startDate');
         const endDate = url.searchParams.get('endDate');
         const phoneNumber = url.searchParams.get('phoneNumber');
-        const limit = url.searchParams.get('limit') || '500';
 
         // Get Supabase configuration from environment
         const supabaseUrl = Deno.env.get('SUPABASE_URL');
@@ -28,7 +28,12 @@ Deno.serve(async (req) => {
         }
 
         // Build query parameters for transaction_history table
-        let queryParams = `select=*&order=created_at.desc&limit=${limit}`;
+        let queryParams = `select=*&order=created_at.desc`;
+        
+        // เพิ่ม limit เฉพาะเมื่อผู้ใช้ระบุชัดเจน
+        if (limit) {
+            queryParams += `&limit=${limit}`;
+        }
         
         // Add filters
         const filters = [];
