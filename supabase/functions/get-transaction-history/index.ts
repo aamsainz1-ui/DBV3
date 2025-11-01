@@ -17,7 +17,7 @@ Deno.serve(async (req) => {
         const startDate = url.searchParams.get('startDate');
         const endDate = url.searchParams.get('endDate');
         const phoneNumber = url.searchParams.get('phoneNumber');
-        const limit = url.searchParams.get('limit') || '50';
+        const limit = url.searchParams.get('limit') || '500';
 
         // Get Supabase configuration from environment
         const supabaseUrl = Deno.env.get('SUPABASE_URL');
