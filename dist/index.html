@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>True Wallet Dashboard - ธีมสีม่วง</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#7C3AED',
+                        secondary: '#A855F7',
+                        accent: '#C084FC',
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="min-h-screen bg-gradient-to-br from-purple-50 to-purple-100 dark:from-purple-900 dark:to-purple-800 p-6">
+    <div class="max-w-4xl mx-auto">
+        <!-- Header -->
+        <div class="text-center mb-8">
+            <h1 class="text-4xl font-bold text-purple-800 dark:text-purple-100 mb-2">
+                True Wallet Dashboard
+            </h1>
+            <p class="text-purple-600 dark:text-purple-300">
+                ธีมสีม่วง (Purple Theme)
+            </p>
+        </div>
+
+        <!-- Color Palette -->
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
+            <div class="bg-white dark:bg-gray-800 rounded-lg p-6 shadow-lg">
+                <h3 class="text-lg font-semibold text-purple-800 dark:text-purple-200 mb-4">
+                    Primary Color
+                </h3>
+                <div class="w-full h-16 bg-purple-600 rounded-lg mb-2"></div>
+                <p class="text-sm text-gray-600 dark:text-gray-400">#7C3AED</p>
+            </div>
+            
+            <div class="bg-white dark:bg-gray-800 rounded-lg p-6 shadow-lg">
+                <h3 class="text-lg font-semibold text-purple-700 dark:text-purple-300 mb-4">
+                    Secondary Color
+                </h3>
+                <div class="w-full h-16 bg-purple-500 rounded-lg mb-2"></div>
+                <p class="text-sm text-gray-600 dark:text-gray-400">#A855F7</p>
+            </div>
+            
+            <div class="bg-white dark:bg-gray-800 rounded-lg p-6 shadow-lg">
+                <h3 class="text-lg font-semibold text-purple-600 dark:text-purple-400 mb-4">
+                    Accent Color
+                </h3>
+                <div class="w-full h-16 bg-purple-400 rounded-lg mb-2"></div>
+                <p class="text-sm text-gray-600 dark:text-gray-400">#C084FC</p>
+            </div>
+        </div>
+
+        <!-- Interactive Components -->
+        <div class="bg-white dark:bg-gray-800 rounded-lg p-8 shadow-lg">
+            <h2 class="text-2xl font-bold text-purple-800 dark:text-purple-200 mb-6">
+                UI Components
+            </h2>
+            
+            <div class="space-y-4">
+                <button class="bg-purple-600 hover:bg-purple-700 text-white font-bold py-3 px-6 rounded-lg transition-colors">
+                    Primary Button
+                </button>
+                
+                <button class="bg-purple-500 hover:bg-purple-600 text-white font-bold py-3 px-6 rounded-lg transition-colors ml-4">
+                    Secondary Button
+                </button>
+                
+                <button class="bg-purple-400 hover:bg-purple-500 text-white font-bold py-3 px-6 rounded-lg transition-colors ml-4">
+                    Accent Button
+                </button>
+            </div>
+            
+            <div class="mt-8">
+                <div class="bg-purple-100 dark:bg-purple-900 border border-purple-200 dark:border-purple-700 rounded-lg p-4">
+                    <p class="text-purple-800 dark:text-purple-200">
+                        ธีมสีม่วงใช้โทนสีม่วงเป็นหลัก สร้างความรู้สึกที่อบอุ่นและเป็นมิตร
+                    </p>
+                </div>
+            </div>
+            
+            <!-- Counter Demo -->
+            <div class="mt-8 text-center">
+                <div class="bg-purple-50 dark:bg-purple-900 rounded-lg p-6">
+                    <h3 class="text-xl font-semibold text-purple-800 dark:text-purple-200 mb-4">
+                        Interactive Demo
+                    </h3>
+                    <div id="counter" class="bg-purple-600 hover:bg-purple-700 text-white font-bold py-3 px-8 rounded-lg transition-colors text-lg cursor-pointer">
+                        Count: <span id="count">0</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        let count = 0;
+        document.getElementById('counter').addEventListener('click', function() {
+            count++;
+            document.getElementById('count').textContent = count;
+        });
+
+        // Toggle dark mode
+        function toggleDarkMode() {
+            document.documentElement.classList.toggle('dark');
+        }
+
+        // Add dark mode toggle button
+        const darkModeToggle = document.createElement('button');
+        darkModeToggle.innerHTML = '🌙 Dark/Light';
+        darkModeToggle.className = 'fixed top-4 right-4 bg-purple-600 hover:bg-purple-700 text-white px-4 py-2 rounded-lg';
+        darkModeToggle.onclick = toggleDarkMode;
+        document.body.appendChild(darkModeToggle);
+    </script>
+</body>
+</html>

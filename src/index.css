@@ -1,0 +1,38 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --radius: 0.5rem;
+    --sidebar-background: 0 0% 98%;
+    --sidebar-foreground: 240 5.3% 26.1%;
+    --sidebar-primary: 270 75% 65%;
+    --sidebar-primary-foreground: 0 0% 98%;
+    --sidebar-accent: 270 75% 85%;
+    --sidebar-accent-foreground: 270 75% 15%;
+    --sidebar-border: 270 25% 90%;
+    --sidebar-ring: 270 75% 65%;
+  }
+
+  .dark {
+    --sidebar-background: 270 25% 8%;
+    --sidebar-foreground: 270 75% 85%;
+    --sidebar-primary: 270 75% 65%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 270 25% 12%;
+    --sidebar-accent-foreground: 270 75% 85%;
+    --sidebar-border: 270 25% 15%;
+    --sidebar-ring: 270 75% 65%
+  }
+}
+
+
+
+img {
+  object-position: top;
+}
+
+.fixed {
+  position: fixed;
+}
